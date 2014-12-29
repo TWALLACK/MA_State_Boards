@@ -26,6 +26,7 @@ for page in range(len(URL)):
     web_request = urllib2.urlopen(URL[page])
     html = web_request.read()
     strings = re.findall(r'brdid=\d+',html)
+    print "Downloading links on this page:  " + URL
     time.sleep(5)
     for i in range(len(strings)):
         boards.append(strings[i])
