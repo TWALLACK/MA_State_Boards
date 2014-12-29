@@ -3,6 +3,7 @@
 #import modules
 import urllib2
 import re
+import time
 
 #URLs for all the sections of the state's boards and commissions site
 URL=["http://appointments.state.ma.us/Results.aspx?PolArea=A%26F",
@@ -25,6 +26,7 @@ for page in range(len(URL)):
     web_request = urllib2.urlopen(URL[page])
     html = web_request.read()
     strings = re.findall(r'brdid=\d+',html)
+    time.sleep(5)
     for i in range(len(strings)):
         boards.append(strings[i])
 print "There are " + str(len(strings)) + " board lists. They are: "
@@ -34,6 +36,7 @@ print "There are " + str(len(strings)) + " board lists. They are: "
 #Save each board list to file directory
 for board in range(len(boards)):
 	web_request = urllib2.urlopen("http://appointments.state.ma.us/BoardDetail.aspx?" + (boards[board]))
+	time.sleep(5)
 	html_board = web_request.read()
 	outfilename = (boards[board])
 	outpath = 'c:/python27/boards3/' #You might want to rename directory
