@@ -14,6 +14,7 @@ path = os.getcwd()
 reports = [ i for i in os.listdir(path) if i[-4:] == 'html' ]
 outfilename = 'board_list.txt'
 outfile = open(outfilename, 'w')
+outfile.write("Board_Name|Person_Name|Title|Chair?|Date_Term_ends")
 boards = str(len(reports))
 print "There are " + boards + " boards in the folder."
 seats = 0  #This is the number of seats on all the boards
