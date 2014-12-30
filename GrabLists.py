@@ -44,6 +44,6 @@ for board in range(len(boards)):
 	outfile = open(outpath+outfilename+".html", 'w')
 	outfile.write(html_board)
 	outfile.close()
-	print "printing" + boards[board]
+	print "Downloading " + boards[board]
 print "Done"
 
