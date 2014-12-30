@@ -26,11 +26,11 @@ for page in range(len(URL)):
     web_request = urllib2.urlopen(URL[page])
     html = web_request.read()
     strings = re.findall(r'brdid=\d+',html)
-    print "Downloading links"
-    time.sleep(5)
+    print "Bear with me -- I'm gathering links"
+    time.sleep(1)
     for i in range(len(strings)):
         boards.append(strings[i])
-print "There are " + str(len(strings)) + " board lists. They are: "
+print "There are " + str(len(boards)) + " board lists. They are: "
 #print strings
 
 
